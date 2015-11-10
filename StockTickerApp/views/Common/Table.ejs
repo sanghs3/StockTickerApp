@@ -234,3 +234,15 @@
 		</tbody>
 	</table>
 </div>
+
+<script>
+$.ajax({ url: "https://api.mongolab.com/api/1/databases/mongodb-sss/collections/stocks?q={"active": true}&apiKey=myAPIKey",
+	  data: JSON.stringify({ "x" : 1 }),
+	  type: "GET",
+	  contentType: "application/json" 
+	  success: function(success)
+	  {
+		  console.log(success);
+	  }});
+
+</script>
