@@ -11,7 +11,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-
+var path = require('path');
 
 
 // Set up our express application  ======================================================================
@@ -19,12 +19,7 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 app.set('view engine', 'ejs'); // set up ejs for templating
-
-
-// Routes ======================================================================
-
-app.get('/', routes.index);
-app.get('/users', user.list);
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Start MongoDB ======================================================================
 
