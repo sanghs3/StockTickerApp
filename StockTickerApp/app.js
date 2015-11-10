@@ -1,6 +1,5 @@
 
 // Tell app.js all needed modules for this file ======================================================================
-var routes = require('./routes/index');
 var user = require('./routes/user');
 var stocks = require('./routes/models/stocks'); // Exports the Schema used in our MongoDB 
 var express  = require('express');
@@ -11,6 +10,8 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+var routes = require('./routes/routes');
+var handlers = require('./routes/handlers');
 var path = require('path');
 
 
@@ -20,6 +21,7 @@ app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static(path.join(__dirname, 'public')));
+routes(app, handlers);
 
 // Start MongoDB ======================================================================
 
