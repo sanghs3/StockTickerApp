@@ -8,7 +8,7 @@
 	</div>
 
 	<!-- Table -->
-	<table class="table">
+	<table id="myTable" class="table">
 		<thead>
 			<tr>
 				<th>Value</th>
@@ -236,17 +236,25 @@
 </div>
 
 <script>
-	 $(function(){
-		    $.ajax({
-		      url: 'https://api.mongolab.com/api/1/databases/mongodb-sss/collections/stocks?q={"name": Shan}&apiKey=u09aDBLJVfRGH9RWvtggWt4DiTYQ2tFt',
-		      type: 'GET',
-		      contentType: "application/json",
-		      success: function (data) {
-		        console.log('success', data);
-		      },
-		      error: function (XMLHttpRequest, textStatus, errorThrown) {
-		        console.log('error', errorThrown);
-		      }
-		    });
-		  });
+	$(function() {
+		$
+				.ajax({
+					url : 'https://api.mongolab.com/api/1/databases/mongodb-sss/collections/stocks?q={"name": "Game1"}&apiKey=u09aDBLJVfRGH9RWvtggWt4DiTYQ2tFt',
+					type : 'GET',
+					contentType : "application/json",
+					success : function(data) {
+						var myTable = document.getElementById('myTable');
+						myTable.rows[data[0].oil].cells[1].innerHTML = '0';
+						myTable.rows[data[0].grain].cells[2].innerHTML = '0';
+						myTable.rows[data[0].industrial].cells[3].innerHTML = '0';
+						myTable.rows[data[0].silver].cells[4].innerHTML = '0';
+						myTable.rows[data[0].gold].cells[5].innerHTML = '0';
+						myTable.rows[data[0].bonds].cells[6].innerHTML = '0';
+
+					},
+					error : function(XMLHttpRequest, textStatus, errorThrown) {
+						console.log('error', errorThrown);
+					}
+				});
+	});
 </script>

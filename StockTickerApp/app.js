@@ -28,9 +28,27 @@ routes(app, handlers);
 mongoose.connect("mongodb://admin:admin@ds049754.mongolab.com:49754/mongodb-sss"); // connect to our database
 var db = mongoose.connection; //Instance of db (Can be used later)
 var NewEntry = new stocks({ //Creating a new entry
+	name : "Game1",
+	index : 0,
+	email : "sangha0@ca.ibm.com",
+	password : "password",
+	room : 1,
+	cash : 30,
+	portfolio : 30,
+	oil : 11,
+	grain : 11,
+	industrial : 11,
+	silver : 11,
+	gold : 11,
+	bonds : 11
+ });
+
+NewEntry.save(); //Saving to DB
+
+var NewEntry = new stocks({ //Creating a new entry
 	name : "Shan",
-	index : 1,
-	email : "sangha5@ca.ibm.com",
+	index : 0,
+	email : "sangha0@ca.ibm.com",
 	password : "password",
 	room : 1,
 	cash : 30,
