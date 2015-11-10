@@ -10,29 +10,27 @@
 <!-- Bootstrap -->
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <body>
-	<script src="/bootstrap/js/bootstrap.min.js"></script>
-	<% include Common/Header.ejs %>
-	<div class="jumbotron">
-		<h1>StockTicker</h1>
-		<p>Let's Play!</p>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-8">
-				<div class="well"><% include Common/Table.ejs %></div>
-			</div>
-			<div class="col-sm-4">
-				<div class="well">
-					<h1>Hello</h1>
-				
-					<%- include('Common/player.ejs') %>
-				</div>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<% include Common/Header.ejs %>
+<div class="jumbotron">
+	<h1>StockTicker</h1>
+	<p>Let's Play!</p>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="well"><% include Common/Table.ejs %></div>
+		</div>
+		<div class="col-sm-4">
+			<div class="well">
+				<h1>Hello</h1>
+
+				<%- include('Common/player.ejs') %>
 			</div>
 		</div>
 	</div>
-
-
-
+</div>
 
 </body>
 </html>

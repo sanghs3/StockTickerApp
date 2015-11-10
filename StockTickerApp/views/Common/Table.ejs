@@ -236,13 +236,17 @@
 </div>
 
 <script>
-$.ajax({ url: "https://api.mongolab.com/api/1/databases/mongodb-sss/collections/stocks?q={"active": true}&apiKey=myAPIKey",
-	  data: JSON.stringify({ "x" : 1 }),
-	  type: "GET",
-	  contentType: "application/json" 
-	  success: function(success)
-	  {
-		  console.log(success);
-	  }});
-
+	 $(function(){
+		    $.ajax({
+		      url: 'https://api.mongolab.com/api/1/databases/mongodb-sss/collections/stocks?q={"name": Shan}&apiKey=u09aDBLJVfRGH9RWvtggWt4DiTYQ2tFt',
+		      type: 'GET',
+		      contentType: "application/json",
+		      success: function (data) {
+		        console.log('success', data);
+		      },
+		      error: function (XMLHttpRequest, textStatus, errorThrown) {
+		        console.log('error', errorThrown);
+		      }
+		    });
+		  });
 </script>
